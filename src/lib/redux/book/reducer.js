@@ -1,6 +1,13 @@
 import { actionTypes } from './action'
 
-const reducer = (state, action) => {
+const defaultState = {
+  base: {
+    title: '모든 문서',
+    id: 0,
+  }
+}
+
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.CREATE_BOOK:
       return state

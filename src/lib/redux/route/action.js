@@ -9,10 +9,12 @@ const actions = {
     book,
     note
   }) => {
-    type: actionTypes.SET_ROUTE,
-    payload: {
-      book,
-      note,
+    return {
+      type: actionTypes.SET_ROUTE,
+      payload: {
+        book,
+        note,
+      },
     }
   }
 }
