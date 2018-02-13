@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import bookActions from '../lib/redux/book/actions'
-import noteActions from '../lib/redux/note/actions'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import NoteList from '../components/NoteList'
@@ -18,8 +16,6 @@ const mapStatesToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      ...bindActionCreators(bookActions, dispatch),
-      ...bindActionCreators(noteActions, dispatch),
     },
   }
 }
