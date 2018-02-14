@@ -1,15 +1,18 @@
 import { enumString } from '../../helpers'
 
 export const actionTypes = enumString(
-  'CREATE_PAGE',
+  'ADD_PAGE',
   'EDIT_PAGE',
   'DELETE_PAGE',
 )
 
 const actions = {
-  createPage: () => {
+  addPage: (noteId) => {
     return {
-      type: actionTypes.CREATE_PAGE,
+      type: actionTypes.ADD_PAGE,
+      payload: {
+        noteId,
+      },
     }
   },
   editPage: () => {

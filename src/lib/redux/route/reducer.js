@@ -1,18 +1,30 @@
 import { actionTypes } from './action'
 
 const defaultState = {
-  book: 0,
   note: 0,
+  page: 0,
 }
 
 const reducer = (state = defaultState, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case actionTypes.SET_ROUTE:
-      // =FIXME
-      return {
-        ...state,
-        book: action.payload.book,
-        note: action.payload.note,
+      const {
+        note,
+        page,
+      } = action.payload
+
+      if (typeof note === 'number') {
+        return {
+          ...state,
+          note,
+        }
+      }
+
+      if (typeof page === 'number') {
+        return {
+          ...state,
+          page,
+        }
       }
     default:
       return state

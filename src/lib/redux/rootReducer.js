@@ -5,8 +5,8 @@ import pageReducer from './page/reducer'
 
 const rootReducer = combineReducers({
   route: routeReducer,
-  note: noteReducer,
-  page: pageReducer,
+  notes: noteReducer,
+  pages: pageReducer,
 })
 
 export default rootReducer
