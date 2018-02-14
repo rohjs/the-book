@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
-import NoteList from '../components/NoteList'
+import PageList from '../components/PageList'
 import '../styles/App.css'
 
 
@@ -27,7 +27,7 @@ class App extends Component {
         <Header />
           <main className='main'>
             <Sidebar {...this.props} />
-            <NoteList />
+            <PageList />
           </main>
       </div>
     );

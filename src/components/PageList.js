@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/NoteList.css'
+import '../styles/PageList.css'
 
-const NoteListItem = () => {
+const PageListItem = () => {
   return (
     <li className='list-item'>
       <h1>기본적인 문서 작성툴입니다.</h1>
@@ -15,14 +15,19 @@ const NoteListItem = () => {
   )
 }
 
-const NoteList = () => {
+const PageList = () => {
   return (
-    <section className='note-list'>
+    <section className='page-list'>
+      <header className='page-header'>
+        <h1 className='sr-only'>
+          노트 보기
+        </h1>
+      </header>
       <ul className='list'>
-        <NoteListItem />
+        <PageListItem />
       </ul>
     </section>
   )
 }
 
-export default NoteList
+export default PageList
