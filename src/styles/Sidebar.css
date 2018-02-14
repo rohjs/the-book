@@ -1,4 +1,6 @@
 .sidebar {
+  position: relative;
+  z-index: 1;
   width: 16.6666666667%;
   box-shadow: 1px 0 0 0 #eceef1;
 }
@@ -18,6 +20,7 @@
   overflow: hidden;
   text-decoration: none;
   transition: border-left 150ms;
+  cursor: pointer;
 }
 
 .sidebar-item.active {

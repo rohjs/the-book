@@ -11,6 +11,13 @@ html {
   font-family: 'Spoqa Han Sans', sans-serif;
 }
 
+button:focus,
+button:hover,
+button:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
 .sr-only {
   position: absolute;
   top: 0;
