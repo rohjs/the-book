@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import routeReducer from './route/reducer'
-import noteReducer from './note/reducer'
-import pageReducer from './page/reducer'
+import dataReducer from './data/reducer'
+import folderReducer from './folder/reducer'
 
 const rootReducer = combineReducers({
   route: routeReducer,
-  notes: noteReducer,
-  pages: pageReducer,
+  data: dataReducer,
+  folder: folderReducer,
 })
 
 export default rootReducer
