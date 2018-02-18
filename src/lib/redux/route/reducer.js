@@ -1,31 +1,12 @@
-import { actionTypes } from './action'
+import { actionTypes } from './actions'
+import { parsePath } from '../../helpers'
 
-const defaultState = {
-  note: 0,
-  page: 0,
-}
+const defaultState = parsePath(window.location.href)
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.SET_ROUTE:
-      const {
-        note,
-        page,
-      } = action.payload
-
-      if (typeof note === 'number') {
-        return {
-          ...state,
-          note,
-        }
-      }
-
-      if (typeof page === 'number') {
-        return {
-          ...state,
-          page,
-        }
-      }
+      return parsePath(action.payload.url)
     default:
       return state
   }

@@ -6,15 +6,13 @@ export const actionTypes = enumString(
 
 const actions = {
   setRoute: ({
-    note,
-    page,
+    url
   }) => {
     return {
       type: actionTypes.SET_ROUTE,
       payload: {
-        note,
-        page,
-      },
+        url,
+      }
     }
   }
 }
