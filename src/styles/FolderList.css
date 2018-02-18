@@ -1,16 +1,16 @@
-.sidebar {
+.folders {
   position: relative;
   z-index: 1;
   width: 16.6666666667%;
   box-shadow: 1px 0 0 0 #eceef1;
 }
 
-.sidebar ul {
+.folder-list {
   list-style-type: none;
   padding-left: 0;
 }
 
-.sidebar-item {
+.folder-item {
   display: flex;
   align-items: center;
   width: 100%;
@@ -23,12 +23,12 @@
   cursor: pointer;
 }
 
-.sidebar-item.active {
+.folder-item.active {
   border-left: 5px solid #2a3e52;
   background-color: #f9fafc;
 }
 
-.sidebar-item .icon {
+.folder-item .icon {
   width: 25px;
   height: 25px;
   border-radius: 3px;
@@ -38,16 +38,16 @@
   color: #fff;
 }
 
-.sidebar-item:first-child .icon {
+.folder-item:first-child .icon {
   background-color: #ff6811;
 }
 
-.sidebar-item:last-child .icon {
+.folder-item:last-child .icon {
   background-color: #592dea;
 }
 
 
-.sidebar-item h1 {
+.folder-item h1 {
   padding-left: 10px;
   font-size: 14px;
   font-weight: 400;
