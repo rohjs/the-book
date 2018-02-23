@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import routeActions from '../lib/redux/route/action'
+import routeActions from '../lib/redux/route/actions'
 import Header from '../components/Header'
 import Router from './Router'
 import '../styles/App.css'
