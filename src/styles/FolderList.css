@@ -3,6 +3,7 @@
   z-index: 1;
   width: 16.6666666667%;
   box-shadow: 1px 0 0 0 #eceef1;
+  overflow: auto;
 }
 
 .folder-list {
