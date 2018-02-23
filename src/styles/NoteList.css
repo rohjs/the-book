@@ -1,4 +1,7 @@
 .note-list {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
   width: 25%;
   box-shadow: 1px 0 0 0 #eceef1;
 }

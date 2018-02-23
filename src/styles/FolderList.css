@@ -1,6 +1,7 @@
 .folder {
   position: relative;
   z-index: 1;
+  flex-shrink: 0;
   width: 16.6666666667%;
   box-shadow: 1px 0 0 0 #eceef1;
   overflow: auto;
