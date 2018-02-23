@@ -1,17 +1,20 @@
 import { actionTypes } from './actions'
 import uuid from 'uuid'
 
+const firstNote = uuid.v4()
+
 const defaultState = {
-  [uuid.v4()]: {
+  [firstNote]: {
     title: 'title',
     content: 'content',
     createdAt: '',
     folderId: '',
-    updatedAt: ''
+    noteId: [firstNote],
+    updatedAt: '',
   },
 }
 
-const reducer = (state = {}, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.ADD_NOTE:
       const id = uuid.v4()
