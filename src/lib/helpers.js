@@ -12,13 +12,14 @@ export function enumString (...args) {
 export function parsePath (pathString) {
   const {
     pathname,
-    query,
-  } = url.parse(pathString, {
-    parseQueryString: true,
-  })
+  } = url.parse(pathString)
+
+  const [, page, folderId, noteId] = pathname.split('/')
 
   return {
     pathname,
-    query,
+    page,
+    folderId,
+    noteId,
   }
 }
