@@ -1,7 +1,22 @@
 import React from 'react'
 import '../../styles/NoteList.css'
+import uuid from 'uuid'
 
 class NoteListItem extends React.Component {
+  openNote = () => {
+    const {
+      noteId,
+      folderId,
+      setRoute,
+    } = this.props
+
+    const url =  `/notes/${folderId}/${noteId}/view`
+
+    setRoute({
+      url,
+    })
+
+  }
   render () {
     const {
       title,
@@ -10,7 +25,10 @@ class NoteListItem extends React.Component {
     } = this.props
 
     return (
-      <li className='list-item'>
+      <li
+        className='list-item'
+        onClick={this.openNote}
+      >
         <h1>{title}</h1>
         <p className='content'>{content}</p>
         <p className='date'>{createdAt}</p>
@@ -27,12 +45,24 @@ class NoteList extends React.Component {
       actions,
       route,
     } = this.props
+    const noteId = uuid.v4()
+    const url = `/notes/${route.folderId}/${noteId}/new`
+
+    actions.setRoute({
+      url,
+    })
+
+    actions.addNote({
+      folderId: route.folderId,
+      noteId,
+    })
 
   }
 
   render () {
     const {
-      data
+      data,
+      actions
     } = this.props
 
     return (
@@ -58,6 +88,7 @@ class NoteList extends React.Component {
                 console.log('data:', data)
                 console.log('item:', item)
                 const {
+                  folderId,
                   noteId,
                   title,
                   content,
@@ -69,6 +100,7 @@ class NoteList extends React.Component {
                   title={title}
                   content={content}
                   createdAt={createdAt}
+                  {...actions}
                 />
               })
           }
