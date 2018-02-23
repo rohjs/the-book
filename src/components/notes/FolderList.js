@@ -3,13 +3,33 @@ import '../../styles/FolderList.css'
 
 
 class FolderListItem extends React.Component {
+  setActiveFolder = (e) => {
+    const {
+      setRoute,
+      id
+    } = this.props
+
+    const url = `/notes/${id}`
+
+    setRoute({
+      url,
+    })
+
+  }
+
   render () {
     const {
-      name
+      name,
+      id,
+      route,
     } = this.props
+
+    const isActive = route.folderId === id ? true : false
+
     return (
       <li
-        className={`folder-item`}
+        className={`folder-item${isActive ? ' active' : ''}`}
+        onClick={this.setActiveFolder}
       >
         <span className='icon'>{name[0]}</span>
         <h1>{name}</h1>
@@ -50,6 +70,7 @@ class FolderList extends React.Component {
     })
   }
 
+
   render () {
     const {
       isShowingFolderCreateInput
@@ -61,7 +82,7 @@ class FolderList extends React.Component {
 
     return (
       <nav className='folder'>
-        <h1>나는 폴더리스트입니다</h1>
+        <h1 className='sr-only'>폴더</h1>
         <ul className='folder-list'>
           {
             folder.map((item, index) => {
@@ -73,6 +94,9 @@ class FolderList extends React.Component {
               return <FolderListItem
                 key={id}
                 name={name}
+                id={id}
+                route={this.props.route}
+                {...this.props.actions}
               />
             })
           }
