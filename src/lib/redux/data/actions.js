@@ -11,6 +11,7 @@ const actions = {
     title,
     content,
     folderId,
+    noteId,
   }) => {
     return {
       type: actionTypes.ADD_NOTE,
@@ -18,26 +19,27 @@ const actions = {
         title,
         content,
         folderId,
+        noteId,
       }
     }
   },
   deleteNote: ({
-    id
+    noteId
   }) => {
     return {
       type: actionTypes.DELETE_NOTE,
       payload: {
-        id,
+        noteId,
       },
     }
   },
   editNote: ({
-    id
+    noteId
   }) => {
     return {
       type: actionTypes.EDIT_NOTE,
       payload: {
-        id,
+        noteId,
       }
     }
   }
