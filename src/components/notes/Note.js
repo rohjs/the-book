@@ -6,6 +6,7 @@ import dataActions from '../../lib/redux/data/actions'
 import folderActions from '../../lib/redux/folder/actions'
 import FolderList from './FolderList'
 import NoteList from './NoteList'
+import NoteRouter from './NoteRouter'
 import '../../styles/Note.css'
 
 const mapStateToProps = (state) => {
@@ -28,6 +29,7 @@ const Note = (props) => (
   <div className='wrap'>
     <FolderList {...props} />
     <NoteList  {...props} />
+    <NoteRouter />
   </div>
 )
 
