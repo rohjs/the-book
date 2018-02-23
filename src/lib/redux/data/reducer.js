@@ -17,20 +17,21 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.ADD_NOTE:
-      const id = uuid.v4()
       const {
         title,
         content,
         folderId,
+        noteId,
       } = action.payload
       const createdAt = Date.now()
 
       return {
         ...state,
-        [id]: {
+        [noteId]: {
           title,
           content,
           folderId,
+          noteId,
           createdAt,
           updatedAt: createdAt,
         }
