@@ -14,12 +14,13 @@ export function parsePath (pathString) {
     pathname,
   } = url.parse(pathString)
 
-  const [, page, folderId, noteId] = pathname.split('/')
+  const [, page, folderId, noteId, status] = pathname.split('/')
 
   return {
     pathname,
     page,
     folderId,
     noteId,
+    status,
   }
 }
