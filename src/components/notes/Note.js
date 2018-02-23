@@ -10,8 +10,7 @@ import '../../styles/Note.css'
 
 const mapStateToProps = (state) => {
   return {
-    data: state.data,
-    folder: state.folder,
+    ...state,
   }
 }
 
