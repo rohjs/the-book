@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import routeActions from '../lib/redux/route/actions'
 import Note from './notes/Note'
 import Settings from './settings/Settings'
 import NotFound from './NotFound'
