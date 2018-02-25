@@ -39,25 +39,17 @@ const reducer = (state = defaultState, action) => {
     case actionTypes.DELETE_NOTE:
       return state
     case actionTypes.UPDATE_NOTE:
-      const prevNote = {
-        ...state[action.payload.noteId]
+      const updatedNote = {
+        ...state[action.payload.noteId],
+        updatedAt: Date.now()
       }
+
+      if (action.payload.title) updatedNote.title = action.payload.title
+      if (action.payload.content) updatedNote.content = action.payload.content
 
       return {
         ...state,
-        [action.payload.noteId]: {
-          ...prevNote,
-          title: action.payload.title || state[action.payload.noteId].title,
-          content: action.payload.content || state[action.payload.noteId].content,
-        }
-      }
-
-
-      return {
-        ...state,
-        [noteId]: {
-          ...prevNote,
-        }
+        [action.payload.noteId]: updatedNote
       }
     case actionTypes.EDIT_NOTE:
       return state

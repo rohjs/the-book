@@ -88,7 +88,6 @@ class NoteList extends React.Component {
                 console.log('data:', data)
                 console.log('item:', item)
                 const {
-                  folderId,
                   noteId,
                   title,
                   content,

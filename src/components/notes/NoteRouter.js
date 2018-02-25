@@ -24,7 +24,6 @@ const mapDispatchToProps = (dispatch) => {
 const NoteRouter = (props) => {
   const {
     route,
-    actions,
   } = props
 
   switch (route.status) {
