@@ -4,7 +4,7 @@ import uuid from 'uuid'
 // typeof folder state = array
 const defaultState = [
   {
-    id: uuid.v4(),
+    id: 'all',
     name: '모든 노트',
     createdAt: Date.now()
   }

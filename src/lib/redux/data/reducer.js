@@ -38,6 +38,27 @@ const reducer = (state = defaultState, action) => {
       }
     case actionTypes.DELETE_NOTE:
       return state
+    case actionTypes.UPDATE_NOTE:
+      const prevNote = {
+        ...state[action.payload.noteId]
+      }
+
+      return {
+        ...state,
+        [action.payload.noteId]: {
+          ...prevNote,
+          title: action.payload.title || state[action.payload.noteId].title,
+          content: action.payload.content || state[action.payload.noteId].content,
+        }
+      }
+
+
+      return {
+        ...state,
+        [noteId]: {
+          ...prevNote,
+        }
+      }
     case actionTypes.EDIT_NOTE:
       return state
     default:

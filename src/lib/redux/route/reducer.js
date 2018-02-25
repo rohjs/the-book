@@ -1,7 +1,7 @@
 import { actionTypes } from './actions'
 import { parsePath } from '../../helpers'
 
-const defaultState = parsePath(window.location.href)
+const defaultState = parsePath(`${window.location.href}/all`)
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {

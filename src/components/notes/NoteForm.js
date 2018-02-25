@@ -2,10 +2,40 @@ import React from 'react'
 import '../../styles/NoteForm.css'
 
 class NoteForm extends React.Component {
+  constructor (props) {
+    super(props)
+  }
   updateTitle = (e) => {
+    const {
+      folderId,
+      noteId,
+    } = this.props.route
+
+    const {
+      actions
+    } = this.props
+
+    actions.updateNote({
+      noteId,
+      title: this.input.value,
+
+    })
 
   }
   updateContent = (e) => {
+    const {
+      folderId,
+      noteId,
+    } = this.props.route
+
+    const {
+      actions
+    } = this.props
+
+    actions.updateNote({
+      noteId,
+      content: this.textarea.value,
+    })
 
   }
   render () {

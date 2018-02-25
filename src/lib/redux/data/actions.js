@@ -3,6 +3,7 @@ import { enumString } from '../../helpers'
 export const actionTypes = enumString(
   'ADD_NOTE',
   'DELETE_NOTE',
+  'UPDATE_NOTE',
   'EDIT_NOTE',
 )
 
@@ -30,6 +31,20 @@ const actions = {
       type: actionTypes.DELETE_NOTE,
       payload: {
         noteId,
+      },
+    }
+  },
+  updateNote: ({
+    noteId,
+    title,
+    content,
+  }) => {
+    return {
+      type: actionTypes.UPDATE_NOTE,
+      payload: {
+        noteId,
+        title,
+        content,
       },
     }
   },
