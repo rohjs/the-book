@@ -2,6 +2,20 @@ import React from 'react'
 import '../../styles/NoteForm.css'
 
 class NoteForm extends React.Component {
+  constructor (props) {
+    super(props)
+
+    const {
+      data,
+      noteId,
+    } = props
+
+    this.state = {
+      title: data[noteId].title,
+      content: data[noteId].content,
+    }
+  }
+
   updateTitle = (e) => {
     const {
       noteId,
@@ -20,7 +34,7 @@ class NoteForm extends React.Component {
   updateContent = (e) => {
     const {
       noteId,
-    } = this.props.route
+    } = this.props
 
     const {
       actions
@@ -32,21 +46,25 @@ class NoteForm extends React.Component {
     })
   }
 
-  render () {
+  componentDidUpdate(prevProps, prevState) {
     const {
-      route,
       data,
+      noteId
     } = this.props
 
-    const {
-      noteId,
-    } = route
+    if (prevProps.noteId !== noteId) {
+      this.setState({
+        title: data[noteId].title,
+        content: data[noteId].content,
+      })
+    }
+  }
 
+  render () {
     const {
       title,
-      content
-    } = data[noteId]
-
+      content,
+    } = this.state
 
     return (
       <form className='note-form'>

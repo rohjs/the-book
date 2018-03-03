@@ -28,9 +28,9 @@ const NoteRouter = (props) => {
 
   switch (route.status) {
     case 'new':
-      return <NoteForm {...props} />
+      return <NoteForm {...props} noteId={route.noteId} />
     case 'edit':
-      return <NoteForm {...props}  />
+      return <NoteForm {...props} noteId={route.noteId} />
     case 'view':
       return <NoteViewer {...props} />
     default:

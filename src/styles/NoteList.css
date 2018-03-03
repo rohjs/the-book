@@ -36,10 +36,15 @@
 }
 
 .list-item h1 {
+  width: 100%;
+  height: 20.8px;
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .list-item .content {
