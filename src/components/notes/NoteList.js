@@ -5,18 +5,18 @@ import uuid from 'uuid'
 class NoteListItem extends React.Component {
   openNote = () => {
     const {
-      noteId,
       folderId,
+      noteId,
       setRoute,
     } = this.props
 
     const url =  `/notes/${folderId}/${noteId}/view`
-
     setRoute({
       url,
     })
 
   }
+
   render () {
     const {
       title,
@@ -62,7 +62,8 @@ class NoteList extends React.Component {
   render () {
     const {
       data,
-      actions
+      actions,
+      route,
     } = this.props
 
     return (
@@ -85,8 +86,6 @@ class NoteList extends React.Component {
             Object
               .entries(data)
               .map((item, index) => {
-                console.log('data:', data)
-                console.log('item:', item)
                 const {
                   noteId,
                   title,
@@ -99,6 +98,8 @@ class NoteList extends React.Component {
                   title={title}
                   content={content}
                   createdAt={createdAt}
+                  noteId={noteId}
+                  folderId={route.folderId}
                   {...actions}
                 />
               })
