@@ -11,6 +11,18 @@ html {
   font-family: 'Spoqa Han Sans', sans-serif;
 }
 
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 14px;;
+  line-height: 1;
+  color: #0081ff;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 button:focus,
 button:hover,
 button:active {
@@ -49,3 +61,4 @@ button:active {
   color: #87969d;
   opacity: .5;
 }
+

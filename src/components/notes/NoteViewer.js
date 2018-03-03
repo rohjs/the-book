@@ -33,9 +33,11 @@ class NoteViewer extends React.Component {
         </div>
         <article className='content'>
           <header className='content-header'>
-            <h1>{title}</h1>
+            <h1 className='note-title'>{title}</h1>
           </header>
-          <p>{content}</p>
+          <div className='note-content'>
+            <p>{content}</p>
+          </div>
         </article>
       </section>
     )
