@@ -17,7 +17,7 @@ class NoteViewer extends React.Component {
 
     return (
       <section className='note-viewer'>
-        <div className='header'>
+        <div className='note-utils header'>
           <button
             className='note-util'
             type='button'
