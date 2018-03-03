@@ -2,6 +2,27 @@ import React from 'react'
 import '../../styles/NoteViewer.css'
 
 class NoteViewer extends React.Component {
+  changeToEditMode = (e) => {
+    e.preventDefault()
+
+    const {
+      actions,
+      route,
+    } = this.props
+    // route에서 folderId, noteId 빼오는 작업이 계속 중복되네
+    // 이걸 좀 더 효율적으로 처리할 수 있는 방법이 있을까?
+    const {
+      folderId,
+      noteId,
+    } = route
+
+    const url = `/notes/${folderId}/${noteId}/edit`
+
+    actions.setRoute({
+      url,
+    })
+  }
+
   render () {
     const {
       route,
@@ -20,6 +41,7 @@ class NoteViewer extends React.Component {
         <div className='note-utils header'>
           <button
             className='note-util'
+            onClick={this.changeToEditMode}
             type='button'
           >
             수정하기
