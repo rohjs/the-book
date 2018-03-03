@@ -43,10 +43,15 @@
 }
 
 .list-item .content {
+  width: 100%;
+  height: 21px;
   margin-bottom: 16px;
   font-size: 14px;
   line-height: 1.5;
   color: #87969d;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .add-btn {
