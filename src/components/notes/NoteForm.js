@@ -46,13 +46,13 @@ class NoteForm extends React.Component {
     })
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentWillReceiveProps(nextProps) {
     const {
       data,
       noteId
     } = this.props
 
-    if (prevProps.noteId !== noteId) {
+    if (nextProps.noteId !== noteId) {
       this.setState({
         title: data[noteId].title,
         content: data[noteId].content,
